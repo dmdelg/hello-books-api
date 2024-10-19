@@ -3,7 +3,7 @@ from app.models.book import books
 
 books_bp = Blueprint("books_bp", __name__, url_prefix="/books")
 
-@books_bp.get("")
+@books_bp.get("", strict_slashes=False)
 def get_all_books():
     books_response = []
     for book in books:
